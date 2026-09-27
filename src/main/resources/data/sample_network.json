@@ -1,0 +1,135 @@
+{
+  "stations": [
+    { "code": "DHK", "name": "Dhaka (Kamalapur)",  "x": 480, "y": 260 },
+    { "code": "CTG", "name": "Chittagong",          "x": 760, "y": 380 },
+    { "code": "KHU", "name": "Khulna",              "x": 230, "y": 430 },
+    { "code": "RAJ", "name": "Rajshahi",             "x": 140, "y": 230 },
+    { "code": "SYL", "name": "Sylhet",               "x": 760, "y": 120 },
+    { "code": "RNG", "name": "Rangpur",              "x": 260, "y": 90  },
+    { "code": "MYM", "name": "Mymensingh",           "x": 500, "y": 130 },
+    { "code": "JSR", "name": "Jessore",              "x": 260, "y": 380 },
+    { "code": "ISW", "name": "Ishwardi",             "x": 260, "y": 260 },
+    { "code": "AKH", "name": "Akhaura",              "x": 640, "y": 260 },
+    { "code": "CUM", "name": "Comilla",              "x": 700, "y": 300 },
+    { "code": "FEN", "name": "Feni",                 "x": 730, "y": 340 },
+    { "code": "NOA", "name": "Noakhali",             "x": 700, "y": 400 },
+    { "code": "BOG", "name": "Bogura",               "x": 190, "y": 160 },
+    { "code": "DIN", "name": "Dinajpur",             "x": 200, "y": 40  },
+    { "code": "BRS", "name": "Barisal",              "x": 350, "y": 430 }
+  ],
+  "edges": [
+    { "from": "DHK", "to": "MYM", "distanceKm": 120, "travelTimeMinutes": 150, "baseFare": 180 },
+    { "from": "MYM", "to": "RNG", "distanceKm": 210, "travelTimeMinutes": 260, "baseFare": 320 },
+    { "from": "DHK", "to": "ISW", "distanceKm": 160, "travelTimeMinutes": 190, "baseFare": 230 },
+    { "from": "ISW", "to": "RAJ", "distanceKm": 80,  "travelTimeMinutes": 100, "baseFare": 130 },
+    { "from": "ISW", "to": "JSR", "distanceKm": 130, "travelTimeMinutes": 150, "baseFare": 190 },
+    { "from": "JSR", "to": "KHU", "distanceKm": 60,  "travelTimeMinutes": 80,  "baseFare": 100 },
+    { "from": "RAJ", "to": "RNG", "distanceKm": 180, "travelTimeMinutes": 220, "baseFare": 340 },
+    { "from": "DHK", "to": "AKH", "distanceKm": 100, "travelTimeMinutes": 120, "baseFare": 150 },
+    { "from": "AKH", "to": "SYL", "distanceKm": 150, "travelTimeMinutes": 190, "baseFare": 240 },
+    { "from": "DHK", "to": "CTG", "distanceKm": 320, "travelTimeMinutes": 360, "baseFare": 250 },
+
+    { "from": "AKH", "to": "CUM", "distanceKm": 45,  "travelTimeMinutes": 55,  "baseFare": 70  },
+    { "from": "CUM", "to": "FEN", "distanceKm": 40,  "travelTimeMinutes": 50,  "baseFare": 65  },
+    { "from": "FEN", "to": "CTG", "distanceKm": 90,  "travelTimeMinutes": 110, "baseFare": 140 },
+    { "from": "FEN", "to": "NOA", "distanceKm": 30,  "travelTimeMinutes": 40,  "baseFare": 50  },
+    { "from": "RAJ", "to": "BOG", "distanceKm": 65,  "travelTimeMinutes": 85,  "baseFare": 80  },
+    { "from": "BOG", "to": "RNG", "distanceKm": 130, "travelTimeMinutes": 160, "baseFare": 150 },
+    { "from": "RNG", "to": "DIN", "distanceKm": 60,  "travelTimeMinutes": 80,  "baseFare": 95  },
+    { "from": "DHK", "to": "BRS", "distanceKm": 170, "travelTimeMinutes": 190, "baseFare": 260 }
+  ],
+  "trains": [
+    {
+      "number": "701",
+      "name": "Subarna Express",
+      "stops": [
+        { "station": "DHK", "seq": 1, "departureTime": "07:00" },
+        { "station": "AKH", "seq": 2, "arrivalTime": "09:10", "departureTime": "09:15" },
+        { "station": "CUM", "seq": 3, "arrivalTime": "09:50", "departureTime": "09:55" },
+        { "station": "FEN", "seq": 4, "arrivalTime": "10:35", "departureTime": "10:40" },
+        { "station": "CTG", "seq": 5, "arrivalTime": "12:00" }
+      ]
+    },
+    {
+      "number": "747",
+      "name": "Sundarban Express",
+      "stops": [
+        { "station": "DHK", "seq": 1, "departureTime": "08:15" },
+        { "station": "ISW", "seq": 2, "arrivalTime": "11:20", "departureTime": "11:25" },
+        { "station": "JSR", "seq": 3, "arrivalTime": "13:10", "departureTime": "13:15" },
+        { "station": "KHU", "seq": 4, "arrivalTime": "14:30" }
+      ]
+    },
+    {
+      "number": "759",
+      "name": "Silk City Express",
+      "stops": [
+        { "station": "DHK", "seq": 1, "departureTime": "14:45" },
+        { "station": "ISW", "seq": 2, "arrivalTime": "17:50", "departureTime": "17:55" },
+        { "station": "RAJ", "seq": 3, "arrivalTime": "19:10" }
+      ]
+    },
+    {
+      "number": "709",
+      "name": "Parabat Express",
+      "stops": [
+        { "station": "DHK", "seq": 1, "departureTime": "06:20" },
+        { "station": "AKH", "seq": 2, "arrivalTime": "08:30", "departureTime": "08:35" },
+        { "station": "SYL", "seq": 3, "arrivalTime": "11:45" }
+      ]
+    },
+    {
+      "number": "765",
+      "name": "Drutajan Express",
+      "stops": [
+        { "station": "DHK", "seq": 1, "departureTime": "21:15" },
+        { "station": "MYM", "seq": 2, "arrivalTime": "23:20", "departureTime": "23:25" },
+        { "station": "RNG", "seq": 3, "arrivalTime": "04:05" }
+      ]
+    },
+    {
+      "number": "725",
+      "name": "Titumir Express",
+      "stops": [
+        { "station": "RAJ", "seq": 1, "departureTime": "06:00" },
+        { "station": "RNG", "seq": 2, "arrivalTime": "09:45" }
+      ]
+    },
+    {
+      "number": "763",
+      "name": "Upakul Express",
+      "stops": [
+        { "station": "DHK", "seq": 1, "departureTime": "15:30" },
+        { "station": "AKH", "seq": 2, "arrivalTime": "17:40", "departureTime": "17:45" },
+        { "station": "CUM", "seq": 3, "arrivalTime": "18:20", "departureTime": "18:25" },
+        { "station": "FEN", "seq": 4, "arrivalTime": "19:05", "departureTime": "19:10" },
+        { "station": "NOA", "seq": 5, "arrivalTime": "19:45" }
+      ]
+    },
+    {
+      "number": "771",
+      "name": "Barendra Express",
+      "stops": [
+        { "station": "RAJ", "seq": 1, "departureTime": "07:30" },
+        { "station": "BOG", "seq": 2, "arrivalTime": "08:55", "departureTime": "09:00" },
+        { "station": "RNG", "seq": 3, "arrivalTime": "11:20" }
+      ]
+    },
+    {
+      "number": "773",
+      "name": "Dolonchapa Express",
+      "stops": [
+        { "station": "RNG", "seq": 1, "departureTime": "06:00" },
+        { "station": "DIN", "seq": 2, "arrivalTime": "07:20" }
+      ]
+    },
+    {
+      "number": "813",
+      "name": "Padma Express",
+      "stops": [
+        { "station": "DHK", "seq": 1, "departureTime": "09:00" },
+        { "station": "BRS", "seq": 2, "arrivalTime": "12:10" }
+      ]
+    }
+  ]
+}
