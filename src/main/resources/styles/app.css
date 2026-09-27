@@ -1,0 +1,351 @@
+/* =================================================================
+   Smart Railway Management System - visual theme
+   Grounded in the subject matter: a paper timetable / ticket surface
+   (warm cream) with deep railway-signage navy structure, a single
+   signal-red accent for routes and primary actions, and an amber
+   split-flap departure-board look reserved for live numeric data.
+   ================================================================= */
+
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-text-fill: #241F1B;
+    -fx-background-color: #F6F1E6;
+
+    /* Design tokens (referenced via -fx-* lookups below) */
+    -rail-navy-900: #101A30;
+    -rail-navy-700: #1E2D4F;
+    -rail-paper: #F6F1E6;
+    -rail-paper-dim: #ECE4D2;
+    -rail-paper-line: #D9CFB8;
+    -rail-ink: #241F1B;
+    -rail-ink-soft: #5B5347;
+    -rail-track: #B7AC96;
+    -rail-signal: #C13B23;
+    -rail-signal-dark: #9C2E1A;
+    -rail-amber: #D9932E;
+}
+
+/* ---------------------------------------------------------------
+   Header band - station nameboard
+   --------------------------------------------------------------- */
+
+.app-header {
+    -fx-background-color: -rail-navy-900;
+    -fx-padding: 14 20 14 20;
+}
+
+.app-title {
+    -fx-font-family: "Georgia", "Times New Roman", serif;
+    -fx-font-size: 21px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #F6F1E6;
+    -fx-letter-spacing: 0.6px;
+}
+
+.app-subtitle {
+    -fx-font-family: "Georgia", "Times New Roman", serif;
+    -fx-font-size: 12px;
+    -fx-font-style: italic;
+    -fx-text-fill: #C9BFA6;
+}
+
+.menu-bar {
+    -fx-background-color: -rail-navy-700;
+    -fx-padding: 0;
+}
+
+.menu-bar .label {
+    -fx-text-fill: #F0EAD9;
+}
+
+.menu-bar .menu:hover, .menu-bar .menu:showing {
+    -fx-background-color: -rail-navy-900;
+}
+
+.menu-item:hover {
+    -fx-background-color: -rail-paper-dim;
+}
+
+/* ---------------------------------------------------------------
+   Section panels (sidebar / map / results)
+   --------------------------------------------------------------- */
+
+.panel {
+    -fx-background-color: -rail-paper;
+}
+
+.panel-title {
+    -fx-font-family: "Georgia", "Times New Roman", serif;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -rail-navy-900;
+    -fx-padding: 0 0 4 0;
+    -fx-border-color: transparent transparent -rail-signal transparent;
+    -fx-border-width: 0 0 2 0;
+}
+
+.sidebar {
+    -fx-background-color: -rail-paper-dim;
+    -fx-border-color: transparent -rail-paper-line transparent transparent;
+    -fx-border-width: 0 1 0 0;
+}
+
+.section-label {
+    -fx-font-family: "Georgia", "Times New Roman", serif;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -rail-ink-soft;
+}
+
+.field-label {
+    -fx-text-fill: -rail-ink-soft;
+    -fx-font-size: 12px;
+}
+
+.controls-bar {
+    -fx-background-color: -rail-paper-dim;
+    -fx-padding: 10 12 10 12;
+    -fx-background-radius: 3;
+    -fx-border-color: -rail-paper-line;
+    -fx-border-width: 1;
+    -fx-border-radius: 3;
+}
+
+.map-frame {
+    -fx-background-color: -rail-paper;
+    -fx-border-color: -rail-paper-line;
+    -fx-border-width: 1;
+}
+
+/* ---------------------------------------------------------------
+   Buttons
+   --------------------------------------------------------------- */
+
+.button {
+    -fx-background-color: -rail-signal;
+    -fx-text-fill: #FBF7EF;
+    -fx-background-radius: 2;
+    -fx-padding: 7 18 7 18;
+    -fx-font-size: 12.5px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: -rail-signal-dark;
+}
+
+.button:pressed {
+    -fx-background-color: derive(-rail-signal-dark, -10%);
+}
+
+.button:focused {
+    -fx-border-color: -rail-navy-900;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 2;
+}
+
+.button:disabled {
+    -fx-opacity: 0.5;
+}
+
+/* ---------------------------------------------------------------
+   Inputs
+   --------------------------------------------------------------- */
+
+.combo-box, .text-field {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: -rail-paper-line;
+    -fx-border-width: 1;
+    -fx-background-radius: 2;
+    -fx-border-radius: 2;
+    -fx-padding: 3;
+}
+
+.combo-box:focused, .text-field:focused {
+    -fx-border-color: -rail-signal;
+}
+
+/* ---------------------------------------------------------------
+   Lists & tables (timetable feel: hairline rules, no card shadows)
+   --------------------------------------------------------------- */
+
+.list-view, .table-view {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: -rail-paper-line;
+    -fx-border-width: 1;
+    -fx-border-radius: 2;
+    -fx-background-radius: 2;
+}
+
+.list-cell, .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent -rail-paper-line transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 6 8 6 8;
+}
+
+.list-cell:filled:selected, .table-row-cell:filled:selected {
+    -fx-background-color: derive(-rail-signal, 75%);
+    -fx-text-fill: -rail-ink;
+}
+
+.list-cell:filled:hover, .table-row-cell:filled:hover {
+    -fx-background-color: -rail-paper-dim;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: -rail-navy-700;
+    -fx-background-radius: 2 2 0 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #F0EAD9;
+    -fx-font-weight: bold;
+    -fx-font-size: 11.5px;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.empty-placeholder {
+    -fx-text-fill: -rail-ink-soft;
+    -fx-font-style: italic;
+}
+
+.leg-gap {
+    -fx-text-fill: -rail-signal-dark;
+    -fx-font-style: italic;
+}
+
+/* ---------------------------------------------------------------
+   Route summary values (departure-board numerals)
+   --------------------------------------------------------------- */
+
+.stat-value {
+    -fx-font-family: "Consolas", "Courier New", monospace;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -rail-signal-dark;
+}
+
+/* ---------------------------------------------------------------
+   Status bar / live clock (split-flap board)
+   --------------------------------------------------------------- */
+
+.status-bar {
+    -fx-background-color: -rail-navy-900;
+    -fx-padding: 7 16 7 16;
+}
+
+.status-text {
+    -fx-text-fill: #E7DFCB;
+    -fx-font-size: 12px;
+}
+
+.clock-caption {
+    -fx-text-fill: #8B8574;
+    -fx-font-size: 11px;
+}
+
+.clock-value {
+    -fx-font-family: "Consolas", "Courier New", monospace;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -rail-amber;
+    -fx-letter-spacing: 1.5px;
+}
+
+.progress-indicator > .percentage {
+    -fx-fill: transparent;
+}
+
+.progress-indicator .indicator {
+    -fx-progress-color: -rail-signal;
+}
+
+/* ---------------------------------------------------------------
+   Announcement ticker (station PA / departure-board marquee)
+   --------------------------------------------------------------- */
+
+.announcement-ticker {
+    -fx-background-color: -rail-navy-700;
+    -fx-background-radius: 3;
+    -fx-padding: 0 12 0 12;
+}
+
+.announcement-text {
+    -fx-font-family: "Consolas", "Courier New", monospace;
+    -fx-font-size: 12.5px;
+    -fx-text-fill: -rail-amber;
+    -fx-letter-spacing: 0.5px;
+}
+
+/* ---------------------------------------------------------------
+   Network stats strip
+   --------------------------------------------------------------- */
+
+.stats-bar-frame {
+    -fx-background-color: -rail-paper-dim;
+    -fx-border-color: -rail-paper-line;
+    -fx-border-width: 1;
+    -fx-padding: 10 14 10 14;
+}
+
+.stats-caption {
+    -fx-font-size: 9.5px;
+    -fx-text-fill: -rail-ink-soft;
+    -fx-letter-spacing: 0.8px;
+}
+
+.stats-value {
+    -fx-font-family: "Consolas", "Courier New", monospace;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -rail-navy-900;
+}
+
+.stats-divider {
+    -fx-background-color: -rail-paper-line;
+}
+
+/* ---------------------------------------------------------------
+   Book Ticket button (secondary, navy - distinct from the signal-red
+   primary "Find Route" action)
+   --------------------------------------------------------------- */
+
+.book-button {
+    -fx-background-color: -rail-navy-900;
+    -fx-text-fill: #F6F1E6;
+}
+
+.book-button:hover {
+    -fx-background-color: -rail-navy-700;
+}
+
+.book-button:disabled {
+    -fx-opacity: 0.4;
+}
+
+/* ---------------------------------------------------------------
+   Dialogs (station details, booking, tickets, bookings history)
+   --------------------------------------------------------------- */
+
+.station-dialog, .booking-dialog, .ticket-dialog, .bookings-dialog {
+    -fx-background-color: -rail-paper;
+}
+
+.dialog-header {
+    -fx-font-family: "Georgia", "Times New Roman", serif;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -rail-navy-900;
+}
+
+.ticket-area {
+    -fx-font-family: "Consolas", "Courier New", monospace;
+    -fx-font-size: 12px;
+    -fx-control-inner-background: #FFFFFF;
+}
