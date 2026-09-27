@@ -105,13 +105,18 @@ public class MainView {
         root.setRight(buildResultsPanel());
         root.setBottom(buildStatusBar());
 
-        Scene scene = new Scene(root, 1200, 760);
+        Scene scene = new Scene(root, 1360, 860);
         String css = getClass().getResource("/styles/app.css") != null
                 ? getClass().getResource("/styles/app.css").toExternalForm() : null;
         if (css != null) scene.getStylesheets().add(css);
 
         stage.setTitle("Smart Railway Management and Route Planning System");
         stage.setScene(scene);
+        // The side panels have a fixed preferred width and the map area has a
+        // sensible minimum, so keep the window from being shrunk down to a
+        // size where something would have to be cut off or overlap.
+        stage.setMinWidth(1020);
+        stage.setMinHeight(640);
         stage.show();
 
         wireBehavior();
@@ -214,7 +219,7 @@ public class MainView {
         return box;
     }
 
-    private VBox buildResultsPanel() {
+    private ScrollPane buildResultsPanel() {
         Label title = new Label("Route Details");
         title.getStyleClass().add("panel-title");
 
@@ -244,6 +249,7 @@ public class MainView {
         itinerarySummaryLabel.setWrapText(true);
         itinerarySummaryLabel.getStyleClass().add("field-label");
         buildTrainTable();
+        trainTable.setPrefHeight(180);
         VBox.setVgrow(trainTable, Priority.ALWAYS);
 
         bookTicketButton.getStyleClass().add("book-button");
@@ -254,8 +260,16 @@ public class MainView {
                 trainsTitle, itinerarySummaryLabel, trainTable, bookTicketButton);
         box.getStyleClass().add("panel");
         box.setPadding(new Insets(16));
-        box.setPrefWidth(320);
-        return box;
+
+        // Wrapped in a ScrollPane so that on a shorter window (or a route with
+        // many stops/legs) everything remains reachable by scrolling instead
+        // of being silently clipped by the fixed-height side region.
+        ScrollPane scrollPane = new ScrollPane(box);
+        scrollPane.setFitToWidth(true);
+        scrollPane.getStyleClass().add("panel-scroll");
+        scrollPane.setPrefWidth(320);
+        scrollPane.setMinWidth(280);
+        return scrollPane;
     }
 
     private void buildTrainTable() {

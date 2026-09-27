@@ -118,6 +118,15 @@
     -fx-border-width: 1;
 }
 
+.panel-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.panel-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
 /* ---------------------------------------------------------------
    Buttons
    --------------------------------------------------------------- */
@@ -348,4 +357,30 @@
     -fx-font-family: "Consolas", "Courier New", monospace;
     -fx-font-size: 12px;
     -fx-control-inner-background: #FFFFFF;
+}
+
+/* ---------------------------------------------------------------
+   Scrollbars (kept thin and on-theme instead of default gray)
+   --------------------------------------------------------------- */
+
+.scroll-bar:vertical, .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: -rail-paper-line;
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: -rail-track;
+}
+
+.scroll-bar .increment-button, .scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 1;
+}
+
+.scroll-bar .increment-arrow, .scroll-bar .decrement-arrow {
+    -fx-background-color: -rail-ink-soft;
 }
